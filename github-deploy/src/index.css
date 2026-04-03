@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: 220 23% 96%;
+  --panel: 0 0% 100%;
+  --muted: 220 10% 42%;
+  --soft: 350 60% 95%;
+  --text: 225 32% 12%;
+  --line: 220 18% 86%;
+  --accent: 352 74% 49%;
+  --accent-soft: 352 78% 95%;
+  --success: 154 59% 34%;
+  --danger: 2 76% 47%;
+}
+
+[data-theme='dark'] {
+  --canvas: 225 28% 10%;
+  --panel: 223 24% 14%;
+  --muted: 219 13% 70%;
+  --soft: 225 18% 18%;
+  --text: 0 0% 97%;
+  --line: 223 16% 26%;
+  --accent: 351 85% 60%;
+  --accent-soft: 351 34% 20%;
+  --success: 151 59% 51%;
+  --danger: 4 87% 66%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(224, 36, 94, 0.10), transparent 28%),
+    linear-gradient(180deg, rgba(247, 248, 252, 0.98), rgba(239, 242, 248, 1));
+  color: hsl(var(--text));
+  font-family: Aptos, 'Segoe UI', Calibri, Arial, sans-serif;
+}
+
+[data-theme='dark'] body {
+  background:
+    radial-gradient(circle at top left, rgba(244, 63, 94, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(10, 14, 24, 1), rgba(14, 18, 31, 1));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(224, 36, 94, 0.18);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.42);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
